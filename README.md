@@ -10,18 +10,19 @@ File ini adalah bagian dari sistem pemantauan tanda vital yang menggunakan senso
 ## Persyaratan
 - Board Arduino ESP32
 - Sensor MAX30105
-
-## Library yang dibutuhkan:
-
+### Library yang dibutuhkan:
 1. WiFi.h (untuk koneksi Wi-Fi)
+2. Wire.h (untuk komunikasi I2C)
+3. MAX30105.h (untuk mengontrol sensor MAX30105)
+4. spo2_algorithm.h dan heartRate.h (untuk menghitung detak jantung dan SpO2)
+5. HTTPClient.h (untuk pengiriman data melalui HTTP)
 
-Wire.h (untuk komunikasi I2C)
-
-MAX30105.h (untuk mengontrol sensor MAX30105)
-
-spo2_algorithm.h dan heartRate.h (untuk menghitung detak jantung dan SpO2)
-
-HTTPClient.h (untuk pengiriman data melalui HTTP)
-
+## Instalasi 
+1. Siapkan Board: Pilih board ESP32 di Arduino IDE
+2. Pasang Library :
+   - Instal library WiFi, Wire, MAX30105, HTTPClient, dan lainnya yang diperlukan melalui Library Manager di Arduino IDE.
+4. Hubungkan Sensor MAX30105 :
+   - Sambungkan sensor ke pin SDA dan SCL pada board.
+5. Sesuaikan Kredensial Wifi : 
 
 # 2 Vital Sign Steering Part
