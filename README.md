@@ -3,20 +3,17 @@
 File ini adalah bagian dari sistem pemantauan tanda vital yang menggunakan sensor MAX30105 untuk mengukur detak jantung dan tingkat oksigen dalam darah (SpO2). Data yang diperoleh kemudian dikirimkan menggunakan Wi-Fi ke server untuk pemantauan jarak jauh.
 
 ## Fitur Utama
-Pengukuran detak jantung dan SpO2 menggunakan sensor MAX30105.
+- Pengukuran detak jantung dan SpO2 menggunakan sensor MAX30105.
+- Komunikasi melalui Wi-Fi untuk mengirimkan data ke server atau perangkat lain.
+- Penggunaan HTTPClient untuk mengirimkan data ke endpoint server.
 
-Komunikasi melalui Wi-Fi untuk mengirimkan data ke server atau perangkat lain.
+## Persyaratan
+- Board Arduino ESP32
+- Sensor MAX30105
 
-Penggunaan HTTPClient untuk mengirimkan data ke endpoint server.
+## Library yang dibutuhkan:
 
-Persyaratan
-Board Arduino ESP32 atau ESP8266
-
-Sensor MAX30105
-
-Library yang dibutuhkan:
-
-WiFi.h (untuk koneksi Wi-Fi)
+1. WiFi.h (untuk koneksi Wi-Fi)
 
 Wire.h (untuk komunikasi I2C)
 
