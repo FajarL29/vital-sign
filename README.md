@@ -67,3 +67,31 @@ File ini bertujuan untuk mengontrol sistem pemantauan tanda vital melalui Blueto
 ## Skema Koneksi 
 - SDA (pin 9) dan SCL (pin 8) pada board Arduino terhubung ke sensor MAX30105.
 
+# 3. Air Quality Monitoring System
+## Deskripsi 
+Proyek ini adalah sistem pemantauan kualitas udara berbasis ESP32 yang mengukur beberapa parameter kualitas udara, seperti O2, CO, CO2, PM2.5, dan PM10, serta suhu dan kelembaban. Sistem ini dapat mengontrol relay untuk mengatur pasokan O2 dan penyaring udara (air purifier) berdasarkan level kualitas udara yang terdeteksi. Data yang diambil dari sensor-sensor ini dikirim ke server melalui WiFi.
+
+## Fitur Utama
+- Pemantauan Kualitas Udara: Mengukur O2, CO, CO2, PM2.5, dan PM10.
+- Kontrol Relay: Mengatur pasokan O2 dan penyaring udara berdasarkan parameter yang terdeteksi.
+- Pengiriman Data ke Server: Mengirim data kualitas udara ke server melalui HTTP POST setiap menit.
+- AQI (Air Quality Index): Menghitung AQI untuk PM2.5, PM10, dan CO menggunakan standar US EPA.
+  
+## Persyaratan
+1. Hardware :
+   - ESP32S3
+   - Sensor gas untuk O2, CO, dan CO2 (misalnya DFRobot MultiGas Sensor dan MQ135)
+   - Sensor suhu dan kelembaban (misalnya DHT22)
+   - Sensor partikel udara (misalnya PMS5003 untuk PM2.5 dan PM10)
+   - Relay untuk kontrol O2 dan penyaring udara
+2. Software :
+   - Arduino IDE
+   - Libraries:
+      - DFRobot_MultiGasSensor
+      - MQUnifiedsensor
+      - DHT
+      - WiFi
+      - HTTPClient
+      - ArduinoJson
+
+## Instalasi
