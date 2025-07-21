@@ -35,3 +35,18 @@ File ini adalah bagian dari sistem pemantauan tanda vital yang menggunakan senso
 - SDA (pin 9) dan SCL (pin 8) pada board Arduino terhubung ke sensor MAX30105.
 
 # 2 Vital Sign Steering Part
+## Deskripsi 
+File ini bertujuan untuk mengontrol sistem pemantauan tanda vital melalui Bluetooth Low Energy (BLE). Proyek ini menggunakan sensor MAX30105 untuk mengukur detak jantung dan oksigen dalam darah, kemudian mengirimkan data melalui komunikasi BLE ke perangkat lain.
+
+## Fitur Utama
+- Pengukuran detak jantung dan SpO2 menggunakan sensor MAX30105.
+- Komunikasi menggunakan BLE (Bluetooth Low Energy) untuk mengirimkan data ke perangkat penerima.
+- Penggunaan BLEClient untuk berinteraksi dengan perangkat BLE lainnya.
+
+## Persyaratan
+- Board Arduino ESP32
+- Sensor MAX30105
+- Library yang dibutuhkan:
+     - Wire.h (untuk komunikasi I2C)
+     - MAX30105.h (untuk mengontrol sensor MAX30105)
+     - BLEDevice.h, BLEUtils.h, BLEServer.h (untuk komunikasi Bluetooth)
