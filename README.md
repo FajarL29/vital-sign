@@ -128,3 +128,14 @@ Proyek ini adalah sistem pemantauan kualitas udara berbasis ESP32 yang mengukur 
 ## Trigger untuk Kontrol O2 dan Penyaring Udara
 - O2 Trigger: Sistem akan mengaktifkan relay O2 jika kadar O2 terdeteksi di bawah nilai normal (O2_MIN) dan akan mematikannya jika O2 sudah kembali normal.
 - Air Purifier Trigger: Sistem akan mengaktifkan penyaring udara (air purifier) jika kadar CO atau CO2 melebihi batas maksimum yang ditentukan (CO_MAX, CO2_MAX).
+
+## Perhitungan AQI
+AQI dihitung berdasarkan standar US EPA untuk PM2.5, PM10, dan CO. Sistem akan menampilkan kategori kualitas udara berdasarkan nilai AQI:
+- Baik (Good): 0 - 50
+- Sedang (Moderate): 51 - 100
+- Tidak Sehat (Unhealthy): 101 - 199
+- Sangat Tidak Sehat (Very Unhealthy): 200+
+
+## Troubleshooting
+- WiFi Tidak Tersambung: Pastikan SSID dan password WiFi sudah benar, dan pastikan ESP32 terhubung ke jaringan.
+- Sensor Tidak Membaca: Periksa koneksi sensor dan pastikan pin yang digunakan sesuai dengan yang ditentukan dalam kode.
