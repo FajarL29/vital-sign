@@ -50,3 +50,20 @@ File ini bertujuan untuk mengontrol sistem pemantauan tanda vital melalui Blueto
      - Wire.h (untuk komunikasi I2C)
      - MAX30105.h (untuk mengontrol sensor MAX30105)
      - BLEDevice.h, BLEUtils.h, BLEServer.h (untuk komunikasi Bluetooth)
+
+## Instalasi
+1. Siapkan Board: Pilih board ESP32 atau ESP8266 di Arduino IDE.
+2. Pasang Library:
+   - Instal library Wire, MAX30105, dan BLE libraries (BLEDevice, BLEUtils, BLEServer).
+3. Hubungkan Sensor MAX30105:
+   - Sambungkan sensor ke pin SDA dan SCL pada board.
+4. Setup BLE
+   - Tentukan karakteristik BLE yang akan digunakan untuk komunikasi, seperti SERVICE_UUID dan CHARACTERISTIC_UUID.
+5. Upload ke Board Arduino
+
+## Penggunaan 
+- Setelah upload selesai, board Arduino akan memulai komunikasi BLE dan mengirimkan data sensor ke perangkat yang terhubung.
+
+## Skema Koneksi 
+- SDA (pin 9) dan SCL (pin 8) pada board Arduino terhubung ke sensor MAX30105.
+
