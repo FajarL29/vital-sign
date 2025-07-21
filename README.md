@@ -21,8 +21,17 @@ File ini adalah bagian dari sistem pemantauan tanda vital yang menggunakan senso
 1. Siapkan Board: Pilih board ESP32 di Arduino IDE
 2. Pasang Library :
    - Instal library WiFi, Wire, MAX30105, HTTPClient, dan lainnya yang diperlukan melalui Library Manager di Arduino IDE.
-4. Hubungkan Sensor MAX30105 :
+3. Hubungkan Sensor MAX30105 :
    - Sambungkan sensor ke pin SDA dan SCL pada board.
-5. Sesuaikan Kredensial Wifi : 
+4. Sesuaikan Kredensial Wifi :
+   -    const char* ssid = "your-ssid";
+         const char* password = "your-password";
+5. Upload ke Board Arduino  
+
+## Penggunaan 
+- Setelah kode diupload, data akan dikumpulkan oleh sensor MAX30105 dan dikirim ke server menggunakan HTTP.
+
+## Skema Koneksi 
+- SDA (pin 9) dan SCL (pin 8) pada board Arduino terhubung ke sensor MAX30105.
 
 # 2 Vital Sign Steering Part
