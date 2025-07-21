@@ -33,6 +33,8 @@ File ini adalah bagian dari sistem pemantauan tanda vital yang menggunakan senso
 
 ## Skema Koneksi 
 - SDA (pin 9) dan SCL (pin 8) pada board Arduino terhubung ke sensor MAX30105.
+  
+=============================================================================================================================
 
 # 2. Vital Sign Steering Part
 ## Deskripsi 
@@ -67,6 +69,8 @@ File ini bertujuan untuk mengontrol sistem pemantauan tanda vital melalui Blueto
 ## Skema Koneksi 
 - SDA (pin 9) dan SCL (pin 8) pada board Arduino terhubung ke sensor MAX30105.
 
+=============================================================================================================================
+
 # 3. Air Quality Monitoring System
 ## Deskripsi 
 Proyek ini adalah sistem pemantauan kualitas udara berbasis ESP32 yang mengukur beberapa parameter kualitas udara, seperti O2, CO, CO2, PM2.5, dan PM10, serta suhu dan kelembaban. Sistem ini dapat mengontrol relay untuk mengatur pasokan O2 dan penyaring udara (air purifier) berdasarkan level kualitas udara yang terdeteksi. Data yang diambil dari sensor-sensor ini dikirim ke server melalui WiFi.
@@ -95,3 +99,32 @@ Proyek ini adalah sistem pemantauan kualitas udara berbasis ESP32 yang mengukur 
       - ArduinoJson
 
 ## Instalasi
+1. Download Arduino IDE
+2. Instal Library yang Diperlukan:
+   - DFRobot_MultiGasSensor
+   - MQUnifiedsensor
+   - DHT
+   - WiFi
+   - HTTPClient
+   - ArduinoJson
+3. Koneksi Hardware
+   - O2 sensor menggunakan I2C (pin SDA = GPIO 9, SCL = GPIO 8)
+   - MQ135 untuk CO dan CO2 menggunakan pin ADC (GPIO 36)
+   - DHT22 untuk suhu dan kelembaban menggunakan pin GPIO 4
+   - Relay O2 dan Air Purifier menggunakan pin GPIO 5 dan GPIO 6
+4. Konfigurasi WIFI
+   - Edit bagian berikut di kode untuk menyambungkan ke WiFi:
+   const char *ssid = "SSID_WIFI";
+   const char *password = "PASSWORD_WIFI";
+   String serverURL = "http://server-url:3000/api/v1/air-monitor/add-air";
+5. Upload ke Mikrokontroller
+   Pilih board ESP32 dan port yang sesuai, lalu upload kode ke board menggunakan Arduino IDE.
+
+## Penggunaan 
+- Pengukuran: Sensor akan mulai membaca kualitas udara seperti O2, CO, CO2, PM2.5, dan PM10 secara terus-menerus.
+- Kontrol Relay: Sistem secara otomatis akan menghidupkan atau mematikan relay untuk pasokan O2 dan penyaring udara berdasarkan level parameter kualitas udara.
+- Pengiriman Data: Data yang dikumpulkan akan dikirimkan ke server setiap satu menit melalui HTTP POST.
+
+## Trigger untuk Kontrol O2 dan Penyaring Udara
+- O2 Trigger: Sistem akan mengaktifkan relay O2 jika kadar O2 terdeteksi di bawah nilai normal (O2_MIN) dan akan mematikannya jika O2 sudah kembali normal.
+- Air Purifier Trigger: Sistem akan mengaktifkan penyaring udara (air purifier) jika kadar CO atau CO2 melebihi batas maksimum yang ditentukan (CO_MAX, CO2_MAX).
