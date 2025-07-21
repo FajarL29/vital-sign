@@ -114,9 +114,9 @@ Proyek ini adalah sistem pemantauan kualitas udara berbasis ESP32 yang mengukur 
    - Relay O2 dan Air Purifier menggunakan pin GPIO 5 dan GPIO 6
 4. Konfigurasi WIFI
    - Edit bagian berikut di kode untuk menyambungkan ke WiFi:
-   const char *ssid = "SSID_WIFI";
-   const char *password = "PASSWORD_WIFI";
-   String serverURL = "http://server-url:3000/api/v1/air-monitor/add-air";
+      ### const char *ssid = "SSID_WIFI";
+      ### const char *password = "PASSWORD_WIFI";
+      ### String serverURL = "http://server-url:3000/api/v1/air-monitor/add-air";
 5. Upload ke Mikrokontroller
    Pilih board ESP32 dan port yang sesuai, lalu upload kode ke board menggunakan Arduino IDE.
 
