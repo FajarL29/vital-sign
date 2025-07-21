@@ -1,4 +1,4 @@
-# 1 Vital Sign Panel Part
+# 1. Vital Sign Panel Part
 ## Deskripsi
 File ini adalah bagian dari sistem pemantauan tanda vital yang menggunakan sensor MAX30105 untuk mengukur detak jantung dan tingkat oksigen dalam darah (SpO2). Data yang diperoleh kemudian dikirimkan menggunakan Wi-Fi ke server untuk pemantauan jarak jauh.
 
@@ -34,7 +34,7 @@ File ini adalah bagian dari sistem pemantauan tanda vital yang menggunakan senso
 ## Skema Koneksi 
 - SDA (pin 9) dan SCL (pin 8) pada board Arduino terhubung ke sensor MAX30105.
 
-# 2 Vital Sign Steering Part
+# 2. Vital Sign Steering Part
 ## Deskripsi 
 File ini bertujuan untuk mengontrol sistem pemantauan tanda vital melalui Bluetooth Low Energy (BLE). Proyek ini menggunakan sensor MAX30105 untuk mengukur detak jantung dan oksigen dalam darah, kemudian mengirimkan data melalui komunikasi BLE ke perangkat lain.
 
