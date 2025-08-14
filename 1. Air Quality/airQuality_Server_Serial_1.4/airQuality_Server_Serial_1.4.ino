@@ -6,8 +6,8 @@
 #include <ArduinoJson.h>
 
 // Configuration for WiFi
-const char *ssid = "EVENT";
-const char *password = "Event@2025";
+const char *ssid = "monumen tugu";
+const char *password = "maulanaa123";
 String serverURL = "http://203.100.57.59:3000/api/v1/air-monitor/add-air";
 
 // ---------- SENSOR O2 ----------
